@@ -77,8 +77,8 @@ typedef struct {
 // Async Actor System Definitions (Forward Declaration)
 // =============================================================================
 
-// Forward declarations - actual definitions in scheduler.h
-typedef struct actor_context actor_t;
+// Forward declaration - actual definition in scheduler.h
+struct actor_context;
 
 // =============================================================================
 // Memory Management Definitions
