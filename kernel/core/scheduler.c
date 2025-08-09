@@ -35,13 +35,13 @@ static message_t message_pool[MAX_MESSAGES];
 static bool message_pool_used[MAX_MESSAGES];
 
 // Internal function prototypes
-static actor_t* scheduler_select_next_actor(void);
-static void scheduler_context_switch(actor_t* next_actor);
-static void scheduler_add_to_ready_queue(actor_t* actor);
-static void scheduler_remove_from_ready_queue(actor_t* actor);
+static struct actor_context* scheduler_select_next_actor(void);
+static void scheduler_context_switch(struct actor_context* next_actor);
+static void scheduler_add_to_ready_queue(struct actor_context* actor);
+static void scheduler_remove_from_ready_queue(struct actor_context* actor);
 static void actor_create_kernel_actor(void);
-static bool actor_add_message(actor_t* actor, message_t* message);
-static void actor_clear_message_queue(actor_t* actor);
+static bool actor_add_message(struct actor_context* actor, message_t* message);
+static void actor_clear_message_queue(struct actor_context* actor);
 static message_t* message_allocate(void);
 
 // =============================================================================
