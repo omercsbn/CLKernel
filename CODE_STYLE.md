@@ -124,7 +124,11 @@ int* array;
 void* ptr;
 
 // When declaring multiple pointers (avoid if possible)
-int *a, *b, *c;  // Each needs its own asterisk
+int* a;
+int* b;
+int* c;
+// Or if on one line (each needs its own asterisk):
+// int *a, *b, *c;
 ```
 
 ### Blank Lines

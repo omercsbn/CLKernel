@@ -121,7 +121,7 @@ Legend: ✓ = Implemented (basic/partial)   (Planned) = Not yet implemented
 
 #### 7. Module System (`modules.c`)
 - **Status**: ⚠️ Stub Implementation
-- **Framework exists but modules not loadable yet
+- **Note**: Framework exists but modules not loadable yet.
 
 ---
 
