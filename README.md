@@ -1,13 +1,13 @@
-# CLKernel Revolutionary OS
+# CLKernel - Experimental OS Kernel
 
-![CLKernel Logo](https://img.shields.io/badge/CLKernel-Revolutionary%20OS-blue?style=for-the-badge&logo=linux)
-![Version](https://img.shields.io/badge/Version-1.0-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
+![CLKernel Logo](https://img.shields.io/badge/CLKernel-Experimental%20OS-blue?style=for-the-badge&logo=linux)
+![Version](https://img.shields.io/badge/Version-0.1.0-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
 ![Architecture](https://img.shields.io/badge/Architecture-x86%2032--bit-orange?style=for-the-badge)
 
-## World's First Revolutionary Operating System Kernel
+## Experimental Operating System Kernel with Async Actor Architecture
 
-CLKernel represents a **groundbreaking advancement** in operating system design, featuring four revolutionary technologies that redefine what a modern kernel can achieve:
+CLKernel is an **experimental research project** exploring modern operating system design concepts. It aims to implement four innovative technologies, though many features are still in development:
 
 ```
   ▄████████  ▄█        ▄█   ▄█▄    ▄████████    ▄████████ ███▄▄▄▄      ▄████████  ▄█       
@@ -20,44 +20,42 @@ CLKernel represents a **groundbreaking advancement** in operating system design,
  ████████▀  █████▄▄██ ███   ▀█▀   ██████████   ███    ███  ▀█   █▀    ██████████ █████▄▄██ 
             ▀         ▀               ▀        ███    ███                        ▀         
 
-                     REVOLUTIONARY OPERATING SYSTEM v1.0
+                 EXPERIMENTAL OPERATING SYSTEM KERNEL v0.1.0
 ```
 
 ---
 
-## Revolutionary Features
+## Design Goals & Features
 
-### 1. AI Supervisor System
-**World's first kernel with embedded machine learning capabilities**
-- Real-time fault detection and prediction
-- Intelligent system health monitoring
-- Autonomous error recovery mechanisms
-- Adaptive resource allocation optimization
-- Machine learning-based performance tuning
+> **Note**: Features marked with ⚠️ are partially implemented or in framework stage.
+> Features marked with ❌ are planned but not yet implemented.
 
-### 2. Hot-Swappable Module System  
-**True runtime modularity without system restart**
-- Dynamic module loading/unloading at runtime
-- **Timer Module**: Advanced scheduling and timing control
-- **Logger Module**: Comprehensive system event logging
-- **Diagnostic Module**: Real-time system analysis and profiling
-- Zero-downtime subsystem replacement
-- Module dependency management and versioning
+### 1. AI Supervisor System ⚠️
+**Kernel-level behavioral monitoring with rule-based anomaly detection**
+- ⚠️ Behavior pattern tracking and statistical analysis
+- ⚠️ Anomaly detection (memory leaks, CPU spikes)
+- ⚠️ Intervention framework (throttle, suspend, quarantine)
+- ❌ Machine learning inference (framework only, no ML model yet)
 
-### 3. Sandboxing Engine
-**Next-generation security with capability-based isolation**
-- WASM-like process isolation technology
-- Fine-grained capability-based permission system
-- Secure execution environments for all processes
-- Advanced memory protection and resource limiting
-- Quantum-resistant security model
+### 2. Hot-Swappable Module System ⚠️
+**Runtime modularity framework (partial implementation)**
+- ⚠️ Module infrastructure and API design
+- ❌ Dynamic module loading/unloading (stub implementation)
+- ❌ Zero-downtime subsystem replacement
+- ❌ Module dependency management
 
-### 4. Interactive Actor Shell
-**Concurrent command processing with actor model**
-- 45+ interactive system commands
-- Actor-based parallel command execution
-- Real-time system monitoring and control
-- Advanced debugging and profiling tools
+### 3. Sandboxing Engine ❌
+**Planned capability-based isolation (not yet implemented)**
+- ❌ WASM-like process isolation
+- ❌ Capability-based permission system
+- ❌ Memory protection and resource limiting
+
+### 4. Actor-Based Scheduler ⚠️
+**Cooperative multitasking with message passing**
+- ✅ Actor creation and termination
+- ⚠️ Asynchronous message passing
+- ⚠️ Basic cooperative scheduling
+- ❌ Interactive shell (not implemented)
 - Scriptable automation and workflow management
 ├─────────────────────────────────────────────────────────────┤
 │              Natural Language CLI Layer                     │
@@ -165,30 +163,33 @@ CLKernel/
 
 ## 🚀 Current Status
 
-### ✅ Implemented
+### ✅ Implemented (Basic/Working)
 - [x] MBR bootloader (512 bytes, switches to protected mode)
 - [x] Kernel entry point and C bridge
 - [x] VGA text mode display with printf support
 - [x] GDT setup for protected mode
+- [x] IDT with interrupt/exception handlers
+- [x] PIC initialization (8259)
 - [x] Build system with Makefile
 - [x] QEMU testing infrastructure
-- [x] Modular project structure
 
-### 🚧 In Progress
-- [ ] IDT and interrupt handling
-- [ ] Memory management (paging, heap)
-- [ ] Async scheduler foundation
-- [ ] Module system infrastructure
+### ⚠️ Partially Implemented
+- [ ] Memory management (basic paging, bump allocator - needs improvement)
+- [ ] Heap allocator (no proper free() support)
+- [ ] Actor-based scheduler (framework exists, needs context switching)
+- [ ] AI supervisor (rule-based anomaly detection, no ML inference)
+- [ ] Module system (API defined, loading not implemented)
+- [ ] Keyboard driver (reads scancodes, no translation)
 
-### 📋 Planned Features
-- [ ] Actor-based IPC system
-- [ ] VFS with custom filesystem
+### ❌ Planned Features (Not Yet Started)
+- [ ] Complete process model with user space
+- [ ] System call interface
+- [ ] Virtual filesystem (VFS)
 - [ ] Network stack
-- [ ] AI supervisor integration
 - [ ] Live kernel patching
 - [ ] ARM64 support
-- [ ] Natural language CLI
-- [ ] Rust module integration
+- [ ] Interactive shell
+- [ ] Proper E820 memory detection
 
 ## 🧪 Testing
 
@@ -298,13 +299,21 @@ Built for portability:
 
 This is an experimental research project. Contributions are welcome!
 
-1. Focus on one subsystem at a time
-2. Maintain the async-first design philosophy
-3. Document architectural decisions
-4. Test thoroughly in QEMU before submitting
-5. Follow the existing code style
+1. Read the [ROADMAP.md](./ROADMAP.md) to understand the project direction
+2. Follow the [CODE_STYLE.md](./CODE_STYLE.md) guidelines
+3. Focus on one subsystem at a time
+4. Maintain the async-first design philosophy
+5. Document architectural decisions
+6. Test thoroughly in QEMU before submitting
 
-## 📖 Learning Resources
+## 📖 Documentation
+
+- **[ROADMAP.md](./ROADMAP.md)** - Comprehensive development roadmap and gap analysis
+- **[CODE_STYLE.md](./CODE_STYLE.md)** - Coding standards and best practices
+- **[docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - System architecture details
+- **[docs/MEMORY_SYSTEM.md](./docs/MEMORY_SYSTEM.md)** - Memory management documentation
+
+## 📚 Learning Resources
 
 - **OS Development**: [OSDev Wiki](https://wiki.osdev.org/)
 - **x86 Assembly**: Intel Software Developer Manuals
@@ -313,13 +322,14 @@ This is an experimental research project. Contributions are welcome!
 
 ## ⚠️ Current Limitations
 
-- **Development Stage**: This is experimental research code
-- **x86_64 Only**: ARM64 support is planned but not implemented
+- **Development Stage**: This is experimental research code - not production ready
+- **x86 32-bit Only**: ARM64 and x86-64 support are planned but not implemented
 - **Limited Hardware**: Currently supports basic VGA and keyboard only
-- **No Filesystem**: VFS is stubbed out
-- **No Networking**: Network stack is planned
-- **AI Features Stubbed**: AI supervisor is not yet functional
+- **No Filesystem**: VFS layer is not implemented
+- **No Networking**: Network stack is not implemented
+- **No User Space**: Processes cannot run in Ring 3 yet
+- **AI Features Limited**: AI supervisor uses rule-based detection, no ML inference
 
 ---
 
-**CLKernel v0.1.0** - Building the future of operating systems, one async actor at a time! 🚀
+**CLKernel v0.1.0** - An experimental OS kernel exploring async actor architecture 🚀
